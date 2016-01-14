@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Menu Sanfona</name>
+    <author>Secretaria do Tesouro Nacional</author>
+    <version>1.0.0</version>
+    <description>Menu estilo sanfona para sites Joomla.</description>
+    <files>
+        <filename>mod_stn_menusanfona.xml</filename>
+        <filename module="mod_stn_menusanfona">mod_stn_menusanfona.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+    </config>
+</extension>

@@ -3,10 +3,10 @@
  * Menu Sanfona Module Entry Point
  * 
  * @package    STN
- * @license    
- * @link       
- 
+ * @license    MIT
+ * @link       https://github.com/cosis-stn/menusanfona
  */
+ 
 // No direct access
 defined('_JEXEC') or die;
 
@@ -14,5 +14,5 @@ defined('_JEXEC') or die;
 require_once dirname(__FILE__) . '/helper.php';
 
 $menu = modMenuSanfonaHelper::getMenu($params);
-require JModuleHelper::getLayoutPath('mod_menusanfona');
-/>
+require JModuleHelper::getLayoutPath('mod_stn_menusanfona');
+?>
