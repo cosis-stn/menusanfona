@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 
 //arquivo com a lógica do módulo
 require_once dirname(__FILE__) . '/helper.php';
-
-$menu = modMenuSanfonaHelper::getMenu($params);
+$categoria = modMenuSanfonaHelper::getMenu($params);
+$menu = $categoria;
 require JModuleHelper::getLayoutPath('mod_stn_menusanfona');
 ?>

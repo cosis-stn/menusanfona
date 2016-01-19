@@ -9,8 +9,12 @@
  
 class ModMenuSanfonaHelper{
 	public static function getMenu($params){
-		return 'Hello World!';
+		$categories = JCategories::getInstance('Content');
+		$category = $categories->get($params->get('title'));
+		return $category;
 	}
+	
+	
 }
  
  

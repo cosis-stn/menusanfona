@@ -9,24 +9,32 @@
  
 // No direct access
 defined('_JEXEC') or die;
-echo $menu;
-?>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/jquery.metismenu/2.2.0/metisMenu.min.css">
-<script src="//cdn.jsdelivr.net/jquery/2.1.4/jquery.min.js"></script>
-<script src="//cdn.jsdelivr.net/jquery.metismenu/2.2.0/metisMenu.min.js"></script>
+//echo json_encode($menu); 
+//echo "<br><br>-------------------------------<br><br>";
+//echo json_encode($menu->getChildren());
 
-<ul class="metismenu" id="menu">
-  <li class="active">
-    <a href="#" aria-expanded="true">Menu 1</a>
-    <ul aria-expanded="true">
-    
-    </ul>
-  </li>
-  <li>
-    <a href="#" aria-expanded="false">Menu 2</a>
-    <ul aria-expanded="false">
-  
-    </ul>
-  </li>
-  
-  </ul>
+$res = $menu->get('title');
+
+
+//foreach($menu->getChildren() as $value){
+//	$res .= "<li>" . $value->get('title') . "</li>";
+//}
+$res .= getChildren($menu);
+
+echo $res;
+
+function getChildren($itemMenu){	
+	$tmp ="";
+	$filhos = $itemMenu->getChildren();
+	if (!empty($filhos)){
+		$tmp = "<ul>";
+		foreach($filhos as $value){	
+			$tmp .= "<li style='display:block !important'>" . $value->get('title') . "</li>";
+			$tmp .= getChildren($value);
+		}	
+		$tmp .= "</ul>";
+	}
+	return $tmp;
+}
+
+?>

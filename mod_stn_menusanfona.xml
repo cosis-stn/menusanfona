@@ -13,5 +13,14 @@
         <filename>tmpl/index.html</filename>
     </files>
     <config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+				   name="title"
+				   type="sql"				   
+				   label="Categoria raiz do menu"
+				   query="select id as value,title from #__categories where published=1 and level =1 and extension='com_content'  order by title" />
+			</fieldset>
+		</fields>
     </config>
 </extension>
